@@ -1,0 +1,140 @@
+#!/bin/sh
+#
+# Copyright (C) 2010, Intel Corporation.
+#
+# This program is free software; you can redistribute it and/or modify it
+# under the terms and conditions of the GNU General Public License,
+# version 2, as published by the Free Software Foundation.
+#
+# This program is distributed in the hope it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+# for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program; if not, write to the Free Software Foundation, Inc., 59 Temple
+# Place - Suite 330, Boston, MA 02111-1307 USA.
+#
+# Authors:
+#       Zhang Jingke  <jingke.zhang@intel.com>
+# Date Created: 2010/01/12
+#
+# Modifications:
+#          Modificator  Date
+#          Content of Modification
+#
+
+# Set environment variable here to specify the BT autotest server's MAC address
+SERV_BD_ADDR="00:0A:94:03:EC:CD"
+# Server type, we support "computer", "headset", "phone" and "keyboard or mouse" here. 
+SERV_BD_TYPE="computer"  
+tmp_file="tmp"
+tmp1_file="tmp1"
+
+DATA_DIR="/usr/lib/bluez/test"
+AUTO_AGENT="./data"
+user=`whoami`
+if [ "${user}" = "root" ]; then
+    AGENT="${DATA_DIR}/simple-agent"
+    FTP_CLIENT="${DATA_DIR}/ftp-client"
+    PBAP_CLIENT="${DATA_DIR}/pbap-client"
+    TEST_ADAPTER="${DATA_DIR}/test-adapter"
+    TEST_DEVICE="${DATA_DIR}/test-device"
+    TEST_DISCOVER="${DATA_DIR}/test-discovery"
+    HCICONFIG="hciconfig"
+    KILLPANEL="killall dawati-panel-bluetooth"
+    KILLAGENT="killall bluetooth-agent"
+else
+    AGENT="sudo ${DATA_DIR}/simple-agent"
+    FTP_CLIENT="sudo ${DATA_DIR}/ftp-client"
+    PBAP_CLIENT="sudo ${DATA_DIR}/pbap-client"
+    TEST_ADAPTER="sudo ${DATA_DIR}/test-adapter"
+    TEST_DEVICE="sudo ${DATA_DIR}/test-device"
+    TEST_DISCOVER="sudo ${DATA_DIR}/test-discovery"
+    HCICONFIG="sudo hciconfig"
+    KILLPANEL="sudo killall dawati-panel-bluetooth"
+    KILLAGENT="sudo killall bluetooth-agent"
+fi
+
+killall simple-agent > /dev/null 2>&1
+TEST_NAME_STRING="default"
+TEST_TEXT_FILE="${DATA_DIR}/text_file_512k"
+export PATH=$PATH:/sbin/:/usr/sbin/:./data/
+adapter="hci0"
+# export DISPLAY=:0.0
+
+# By this function, it can make sure adapter is available and status is UP.
+function adapter_init()
+{
+    local first_adapter=`$HCICONFIG | grep -o "^hci[0-9]" | sed -n '1p'`
+    local ret=0
+
+    if [ -z "${first_adapter}" ]; then
+        echo "[Critical] No adaptor found!"
+        exit 1
+    elif [ "${adapter}" != "${first_adapter}" ]; then
+        adapter=${first_adapter}
+    fi
+
+    if $HCICONFIG | grep "DOWN" > /dev/null ; then
+         ${HCICONFIG} ${adapter} up
+         connmanctl enable bluetooth 
+       ret=$?
+    fi
+    return $ret
+}
+function BT_discover()
+{
+    local ret=0
+    for in in `seq 5`
+    do
+    	timeout 30 ${TEST_DISCOVER} >& /tmp/bt_device_list 
+    	cat /tmp/bt_device_list | grep $SERV_BD_ADDR 
+        ret=$?
+        if [ $ret -eq 0 ]
+        then
+            break
+        fi 
+    done
+    if [ $ret -ne 0 ]
+    then
+       echo 'BT discover fail'
+       exit 1
+    fi
+    return $ret
+}
+function auto_pair()
+{
+    local ret=0
+    ${TEST_DEVICE} remove $SERV_BD_ADDR > /dev/null 2>&1
+    BT_discover
+    ${AUTO_AGENT}/auto_accept_agent hci0 $SERV_BD_ADDR
+    ret=$?
+    if [ ${ret} -ne 0 ]; then
+        echo "[FAIL] auto pairing failed!"
+        exit ${ret}
+    fi    
+}
+
+function agent_setup()
+{
+    # on netbook, dawati-panel-bluetooth contains agent
+    local bt_panel=`ps -ef | grep dawati-panel-bluetooth | wc -l`
+    local bt_agent=`ps -ef | grep bluetooth-agent | wc -l`
+
+    if [ "${bt_panel}" -eq 2 ]; then
+        # System has dawati-panel-bluetooth process, we restart it
+        ${KILLPANEL} > /dev/null 
+        # after killall, system will automatically restart the panel
+    elif [ "${bt_agent}" -eq 2 ]; then
+        # We need to kill bluetooth-agent firstly
+        ${KILLAGENT} > /dev/null
+        # Start our agent
+        ${AUTO_AGENT}/auto_accept_agent hci0 &
+    else
+        # No such a panel, we can setup agent
+        ${AUTO_AGENT}/auto_accept_agent hci0 &
+    fi
+
+    sleep 2
+} 

@@ -1,0 +1,77 @@
+-----------------------
+ Introduction
+-----------------------
+This suite is to test Bluez stack.
+# Usage for each file (under tts-bluez-tests folder):
+<sub-folder>   <usage>
+src            source file of the cases
+data/client    shared scripts and data on the client side for testing
+data/server    entire folder should be copied to server machine.
+               Run server_startup.sh on the server to set up
+               a daemon to communicate with Client.
+
+# Needed package/command
+gcc make  --- common packages for make 
+pygobject --- python binding for gobject used by pairing script
+              data/client/auto_accept_agent
+rpm-build --- for packaging
+md5sum    --- to check the file consistence after FTP transfering.
+bridge-utils --- add a network bridge for PAN server setting. (This is only for Server part)
+When PANU case is running, server should install bridge-utils to create a network bridge as PAN server.
+
+-----------------------
+Build and Run
+-----------------------
+(Suppose you only get the source code and testrunner-lite has been setup on your test machine
+ if you have got tts-bluez-tests RPM, you can directly go to step.4 on testing machine
+ if you have not installed the testrunner, you can follow the README of framework)
+Steps:
+1. We need to use two machine, one is server and another is your testing machine as client. 
+   Setup Server environment by three steps as "Test Environment" describe (Please see next section)
+   Then, rest steps are on testing machine
+2. cd tts-bluez-tests
+3. sh pack.sh    --- It will make and generate the tts-bluez-tests RPM
+4. rpm -ivh tts-bluez-tests-1.0.0-1.i386.rpm    --- install RPM to your testing machine 
+
+To run cases, you can either do step.5 or step.6
+5. cd /opt/tts-bluez-tests/ and run any sh file by root account.
+6. (if you use testkit-lite tool) testrunner-lite -f /usr/share/tts-bluez-tests/tests.xml -o /tmp/results.xml
+
+
+-----------------------
+Common Install
+-----------------------
+./autogen
+./configure prefix=/usr
+make && make install
+
+
+-----------------------
+Test Environment
+-----------------------
+1. Setup Server daemon (Strongly recommend to use ubuntu-10.04 system)
+  copy tts-bluez-tests/data/server folder to server machine, run ./bt_pan_server_setup.sh to enable PAN server, 
+  then run ./server_startup.sh to enable OBEX server.
+
+2. Do confirm your client machine has no old pairing with the server machine, or it will 
+  affect most of the cases.
+
+3. [On client] Config the environment file on client, the file is data/client/bluetooth_env:
+DATA_DIR     --- the place for all cases where RPM install. E.g. /opt/tts-bluez-tests/
+SERV_BD_ADDR --- Server bluetooth MAC address, e.g. "00:0A:94:03:ED:81"
+
+4. Do run those cases in 'root' user please or use "sudo xxx.sh" in normal user. 
+
+-----------------------
+Known Issues
+-----------------------
+For server setup, do please use ubuntu-10.04 system, because:
+* Fedora does not contain OBEX.
+* Ubuntu11 has some problem, which could cause BT not stable. (to experience, not go further to debug)
+* You can use Tizen image to be BT OBEX server, however, it cannot be PAN server, for it does not have bridge-utils.
+Do please use "su -" to switch to root account for validation. 
+Note: you can report the defects of this test suite to jingke.zhang@intel.com
+
+-----------------------
+TODO
+-----------------------

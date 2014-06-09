@@ -1,0 +1,127 @@
+aal "connman_basic" {
+ 
+    language: python {
+        # language "Python" here means that contents of following code blocks
+        # will contain Python statements.
+    }
+
+    # The following preview-* settings are understood by fmbt-gteditor.
+    # They allow hiding or showing variables in visualised model. This helps
+    # looking at the model in different perspectives.
+    #
+    # Try leaving "powered" out to see which test steps should change the
+    # "connected" value.
+    #
+    # preview-show-vars: powered, connected
+    # preview-depth: 10
+
+    # The variables block contains a comma-separated list of variables that
+    # are visible to all code blocks (like initial_state, guard and body).
+    variables {
+        technologies, powered, connected, scanned
+    }
+
+    initial_state {
+        # The initial_state block sets initial values to the variables
+
+        # Technologies to be tested. This won't be during the test.
+        # Use any combination of "wifi", "bluetooth", "ethernet".
+        technologies = set(["wifi"])
+
+        # Technologies powered up by test steps.
+        powered = set(["wifi"])
+
+        # Technologies that have connected services.
+        connected = set([])
+	scanned = False
+    }
+
+    action "iConnect('wifi')" {
+        # In this test configuration each action is a Python expression.
+        # Expressions are evaluated by the remote_python adapter, in a namespace
+        # where teststeps.py contents have been imported (see connman-basic.conf).
+
+        # The test generator chooses to execute only those actions where guard()
+        # returns True.
+        guard() {
+            return ("wifi" in powered) and (not "wifi" in connected) and scanned
+        }
+
+        # If an action has been executed successfully by the adapter,
+        # test generator executes its body().
+        # Execution of this body block enables execution of "iDisconnect('wifi')".
+        # The test generator may execute body blocks to simulate which test steps
+        # it could execute after them, too.
+        body() {
+            connected.add("wifi")
+        }
+    }
+
+    action "iDisconnect('wifi')" {
+        guard() {
+            return "wifi" in connected
+        }
+        body() {
+            connected.remove("wifi")
+        }
+    }
+
+    # An action block can define several actions at once.
+    # This is convenient if guard() and body() blocks of actions would be
+    # very similar.
+    action "iScan('wifi')", "iScan('bluetooth')" {
+        guard() {
+            # action_name variable contains a string, either
+            # "iScan('wifi')" or "iScan('bluetooth')" in this case.
+            # This extracts the technology from it:
+            techname = action_name.split("'")[1]
+
+            # This action can be executed if the
+            # technology name appears in the "powered" set.
+            return techname in powered
+        }
+        body() { scanned = True }
+     }
+
+    action "iPowerUp('wifi')", "iPowerUp('bluetooth')", "iPowerUp('ethernet')" {
+        guard() {
+            techname = action_name.split("'")[1]
+            return (techname in technologies) and (not techname in powered)
+        }
+        body() {
+            techname = action_name.split("'")[1]
+            if not techname in powered:
+                powered.add(techname)
+        }
+    }
+
+    action "iPowerDown('wifi')", "iPowerDown('bluetooth')", "iPowerDown('ethernet')" {
+        guard() {
+            techname = action_name.split("'")[1]
+            return techname in powered
+        }
+        body() {     
+            techname = action_name.split("'")[1]
+            if techname in powered:
+                powered.remove(techname)
+            if techname in connected:
+                connected.remove(techname)
+            scanned = False
+        }
+    }
+
+    # Action "iConnected('wifi') == True" requires that the iConnected function
+    # in teststeps.py will return True in this case. If requirement for the
+    # return value is not given (as in above actions), the return value is
+    # ignored.
+    # Executing an action is not allowed to raise an exception unless
+    # it is required. For instance, iConnected('xyz') == Error('.*InvalidArgument.*').
+    action "iConnected('wifi') == True" {
+        guard() { return "wifi" in connected }
+    }
+
+    action "iConnected('wifi') == False" {
+        guard() { return not "wifi" in connected }
+    }
+}
+

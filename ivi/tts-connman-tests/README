@@ -1,0 +1,84 @@
+
+---------------------
+Introduction
+---------------------
+tts-connman-tests contains both manual and auto tests for ConnMan. 
+tests.xml describes both auto and manual tests. 
+
+ConnMan is an open source project that provides a daemon for managing 
+internet connections within embedded devices running the Linux operating 
+system
+
+tts-connman-tests automatic test scripts are in the following source code
+structure:
+tts-connman-tests
+  data
+    apset.tgz: The script that used to set Cisco WiFi AP
+  pack.sh: The script that used to build package
+  tests.xml: ConnMan test cases definition, including both auto and manaul
+  README: This file
+  src
+    3G: 3G test scripts                   
+    BT: Bluetooth test scripts
+    common: Common functions that used in test cases
+    Ethernet: Ethernet test scripts              
+    WiFi: WiFi test scripts                  
+    Signal: Test ConnMan signal functionality       
+    Profile: Test ConnMan profile object    
+    Flight: Test ConnMan in flight on/off mode.
+    Property: Test property value in API
+Following are structure after installation:
+/usr/share/tests/common-connectivity-suite/tts-connman-tests/
+  CM_*.py: All automatic test cases
+  common: Common functions that used in test cases
+  README: This file 
+  <sub-dir>: Helper scripts that used in sub test suites like WiFi
+  tests.xml: ConnMan test case definitions
+  
+---------------------
+Testing environment
+---------------------
++ Test machine: This is the device/machine that we test ivi image, like VTC1010 or BFH.
++ Ethernet: Local ethernet
++ WiFi Guest: An open-no-security wireless AP with essid Guest. We use this network to test basic WiFi features by default.
++ WEP WIFI: A WEP encrypted wireless AP. We use it to test WEP encrypted cases
++ WPA2 WIFI: A WPA2 encrypted wireless AP. We use it to test WPA/WPA2 encrypted cases
+
+---------------------
+Install and Run
+---------------------
++ Modify below variables in tts-connman-tests/src/common/config.py to configure actual network information
+  cm_open_ap_essid: The open AP's ssid, the value type is a string, eg. cm_open_ap_essid = 'Guest'
+  cm_wep_ap: Wep encrypted AP's ssid and password, the value type is a hash which including 2 keys("name" and "password"),
+  cm_wpa2_ap: WPA/WPA2 encrypted AP's ssid and password, the value is a hash which including 2 keys("name" and "password"),
+  cm_available_ap: Available(could surf internet) AP's ssid and password, the value type is a hash which including 2 keys("name" and "password")
+  cm_ping_server_ip: The IP address that in the same network with test devices and AP
+
+
++ Install
+rpm -ivh tts-connman-tests-0.1.0-1.i386.rpm --nodeps
+
++ Test environment setup
+Refer the section Test environment setup
+
++ Run
+Setup a open hidden WiFi AP with essid that you
+Connect to a ethernet network so that "ping -b" local network has response
+cd /usr/share/tests/common-connectivity-suite/tts-connman-tests/
+su - 
+export PYTHONPATH=$PYTHONPATH:/usr/share/tests/common-connectivity-suite/tts-connman-tests/common
+testkit-lite -f /usr/share/tests/common-connectivity-suite/tts-connman-tests/tests.xml --comm localhost -o ./results.xml
+Please refer to the section Test Envrionment setup for what to test
+
+---------------------
+Known issues
+---------------------
+1. Some test cases might fail in batch running, meanwhile pass when running
+   independently. We're still debuging these cases.
+
+Note: you can report the defects of this test suite to jeff.zheng@intel.com
+
+---------------------
+To Do
+---------------------
+We will develop more test cases

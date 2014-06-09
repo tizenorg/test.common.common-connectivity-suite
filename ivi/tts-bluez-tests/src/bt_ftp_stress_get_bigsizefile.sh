@@ -1,0 +1,73 @@
+#!/bin/sh
+#DESCR: Check to use FTP to transfer a big file (about 10MB) to OBEXD Server.
+# Copyright (C) 2010 Intel Corporation
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#
+# Authors:
+#       Zhang Jingke  <jingke.zhang@intel.com>
+# Date Created: 2011/03/24
+#
+# Modifications:
+#          Modificator  Date
+#          Content of Modification
+#
+
+# Enter the case folder
+cd `dirname $0`
+. ./data/bluetooth_env
+
+# Init BT adapter to up and piscan
+adapter_init
+
+# Make a pairing with the server
+auto_pair
+
+# after obexd-0.42, the obexd related operation needs an agent in background.
+agent_setup
+
+# make a big file in local directory, size is 10MB, name is "10M_file"
+big_file="10M_file"
+cat ${TEST_TEXT_FILE} ${TEST_TEXT_FILE} > ./1M_file
+cat ./1M_file ./1M_file ./1M_file ./1M_file ./1M_file > ./5M_file
+cat ./5M_file ./5M_file > $big_file
+rm -f ./1M_file ./5M_file
+
+subdir="subdir1"
+
+# Upload this file to FTP server
+${FTP_CLIENT} -d $SERV_BD_ADDR -c $subdir -p `pwd`/${big_file}
+sleep 5
+
+# Download this file to FTP server
+rm -f $big_file
+time1=`date +%s`
+${FTP_CLIENT} -d $SERV_BD_ADDR -c $subdir -g `pwd`/${big_file}
+time2=`date +%s`
+duration=`expr $time2 - $time1`
+ 
+# search this file on Server
+ls | grep "${big_file}" > /dev/null
+if [ $? -ne 0 ]; then
+    echo "[FAIL] Failed to download big 10M file from FTP server!"
+    ret=1
+else 
+    echo "[PASS] succeed in downloading a 10MB file from server, using ${duration} seconds."
+fi
+
+# Delete the big file
+${FTP_CLIENT} -d $SERV_BD_ADDR -c $subdir -r ${big_file}
+rm -f ${big_file}
+
+exit ${ret}

@@ -1,0 +1,1178 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<suite name='tts-connman-tests-upstream'>
+  <set name='Launch'>
+    <testcase component='Networking/Connman/Launch' execution_type='auto' id='CM_Launch_Boot' priority='P2' purpose='After system booted  the connmand daemon should be launched' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. boot system
+2. 'ps aux|grep connmand'
+3. check if there is a thread named connmand in background</step_desc>
+            <expected>There should be one thread named connmand in background</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_Launch_Boot.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Launch' execution_type='auto' id='CM_Launch_State_Ethernet' priority='P2' purpose='Check ethernet technology state at the first launch. The State value is different for different platform. Basically it&apos;s &apos;offline&apos; for mobile device like handset and &apos;enabled&apos; for other like netbook and IVI' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition>Must be first time to launch connman, that is:
+rm -f /var/lib/connman/*
+install connman rpm
+reboot</pre_condition>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. test-manager</step_desc>
+            <expected>In Technologies section, check ethernet State according to followin table
+platform    ethernet State
+Upstream    offline
+Netbook     enabled
+IVI             enabled
+TV             enabled
+handset      offline</expected>
+          </step>
+        </steps>
+      <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_Launch_State_Ethernet.py</test_script_entry></description>
+      <categories>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Launch' execution_type='auto' id='CM_Launch_State_Offlinemode' priority='P2' purpose='Check if offlinemode is off at the first launch' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition>Must be first time to launch connman, that is:
+rm -f /var/lib/connman/*
+install connman rpm
+reboot</pre_condition>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. test-manager</step_desc>
+            <expected>OfflineMode is 'false'</expected>
+          </step>
+        </steps>
+      <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_Launch_State_Offlinemode.py</test_script_entry></description>
+      <categories>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Launch' execution_type='auto' id='CM_Launch_OneConnmand' priority='P2' purpose='there should be no more than one connmand in background' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. boot system
+2. 'ps aux|grep connmand'
+3. the connmand should be in background
+4. command 'su -'
+5. command 'connmand'
+6. check if the second connmand can be generated
+7. ps -ef |grep -i connman</step_desc>
+            <expected>Step 7 shows there is only one connmand running.</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_Launch_OneConnmand.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Launch' execution_type='auto' id='CM_Launch_BT' priority='P2' purpose='After system booted  the bluetoothd daemon should be launched' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. boot system
+2. 'ps aux|grep bluetoothd'
+3. check if there is a thread named bluetoothd in background</step_desc>
+            <expected>There should be one thread named bluetoothd in background</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_Launch_BT.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Netbook</category>
+        <category>IVI</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Launch' execution_type='auto' id='CM_Launch_State_Bluetooth' priority='P2' purpose='Check bluetooth technology state at the first launch. The State value is different for different platform. Basically it&apos;s &apos;offline&apos;.' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition>Must be first time to launch connman, that is:
+rm -f /var/lib/connman/*
+install connman rpm
+reboot</pre_condition>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. test-manager</step_desc>
+            <expected>In Technologies section, check bluetooth State according to followin table
+platform    bluetooth State
+Upstream    offline
+Netbook     offline
+IVI             offline
+TV             offline
+handset      offline</expected>
+          </step>
+        </steps>
+      <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_Launch_State_Bluetooth.py</test_script_entry></description>
+      <categories>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Launch' execution_type='auto' id='CM_Launch_State_WiFi' priority='P2' purpose='Check WiFi technology state at the first launch. The State value is different for different platform. Basically it&apos;s &apos;offline&apos; for mobile device like handset and &apos;enabled&apos; for other like netbook and IVI' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition>Must be first time to launch connman, that is:
+rm -f /var/lib/connman/*
+install connman rpm
+reboot</pre_condition>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. test-manager</step_desc>
+            <expected>In Technologies section, check WiFi State according to followin table
+platform    WiFi State
+Upstream    offline
+Netbook     enabled
+IVI             enabled
+TV             enabled
+handset      offline</expected>
+          </step>
+        </steps>
+      <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_Launch_State_WiFi.py</test_script_entry></description>
+      <categories>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Launch' execution_type='auto' id='CM_Launch_WpaSupplicant' priority='P2' purpose='After system booted  the wpa_supplicant daemon should be launched' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. boot system
+2. 'ps aux|grep wpa_supplicant'
+3. check if there is a thread named wpa_supplicant in background</step_desc>
+            <expected>There should be one thread named wpa_supplicant in background</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_Launch_WpaSupplicant.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+  </set>
+  <set name='BT'>
+    <testcase component='Networking/Connman/BT' execution_type='auto' id='CM_BT_IsReEnableWorks' priority='P2' purpose='Check if BT device still works after powered off and powered on' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. test-connman list
+2. Check if there is BT service
+3. test-connman disable bluetooth
+4. 'test-connman list' shows there is no BT service
+5. test-connman enable bluetooth
+6. 'test-connman list' shows there is the BT service
+7. test-connman connect &lt;bt service&gt;
+8. ping PANU server</step_desc>
+            <expected>Can ping PANU server</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_BT_IsReEnableWorks.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Netbook</category>
+        <category>IVI</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/BT' execution_type='auto' id='CM_BT_IsPoweredOn' priority='P2' purpose='Check if BT device is on by default' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Run 'test-manager'
+2. In section Technologies of the output   Check the powered 'State' of bluetooth is 'true'</step_desc>
+            <expected>The powered 'State' of bluetooth is 'true'</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_BT_IsPoweredOn.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Netbook</category>
+        <category>IVI</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/BT' execution_type='auto' id='CM_BT_PoweredOn' priority='P2' purpose='Check if Powered on works for BT' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. test-connman disable bluetooth and check if powered state is 'false' by 'test-manager'
+2. test-connman enable bluetooth
+3. Check if powered state is 'true' by 'test-manager'</step_desc>
+            <expected>The value is 'true'</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_BT_PoweredOn.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Netbook</category>
+        <category>IVI</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/BT' execution_type='auto' id='CM_BT_PoweredOff' priority='P2' purpose='Check if we can disable BT technology' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. test-manager shows the powered state of bluetooth is 'true'
+2. test-connman disable bluetooth
+3. test-manager shows the powered state of bluetooth is 'false'</step_desc>
+            <expected>The value is  'false'</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_BT_PoweredOff.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Netbook</category>
+        <category>IVI</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/BT' execution_type='auto' id='CM_BT_DeviceIsExist' priority='P0' purpose='Check if BT device exists' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. test-manager
+2. There is a bluetooth technology</step_desc>
+            <expected>There is bluetooth technology</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_BT_DeviceIsExist.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Netbook</category>
+        <category>IVI</category>
+      </categories>
+    </testcase>
+  </set>
+  <set name='WiFiFeature'>
+    <testcase component='Networking/Connman/WiFiFeature' execution_type='auto' id='CM_WS_Open' priority='P1' purpose='Test WiFi for Open mode' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Set AP in Open mode
+2. Connect to the AP</step_desc>
+            <expected>Can get IP and ping the AP</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_WS_Open.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/WiFiFeature' execution_type='auto' id='CM_WS_WPA' priority='P1' purpose='Test WiFi for WPA TKIP mode' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Set AP in WPA TKIP mode
+2. Connect to the AP</step_desc>
+            <expected>Can get IP and ping the AP</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_WS_WPA.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/WiFiFeature' execution_type='auto' id='CM_WA_RememberPasswd' priority='P1' purpose='Check if ConnMan remember previous password' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Connect to AP with password
+2. Disconnect to the AP
+3. Connect to the same AP without password
+4. ConnMan should remember the password and can connect to the AP</step_desc>
+            <expected>ConnMan should remember the password and can connect to the AP</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_WA_RememberPasswd.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/WiFiFeature' execution_type='auto' id='CM_WA_ForgotPassword' priority='P1' purpose='Check if can get error when the connection with password failed' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Connect to AP with wrong password
+2. The error property of the service will show error reason.
+# According to developer  ConnMan just report error in error property  but the passphrase will not be empty</step_desc>
+            <expected>Error property is set.</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_WA_ForgotPassword.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+  </set>
+  <set name='Property'>
+    <testcase component='Networking/Connman/Property' execution_type='auto' id='CM_PS_Nameservers' priority='P2' purpose='Test if Nameservers in Service interface is valid.' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Get Guest service
+2. Check if Nameservers is not empty</step_desc>
+            <expected>:</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PS_Nameservers.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Property' execution_type='auto' id='CM_PT_Type' priority='P2' purpose='Test if Type in Technology interface is valid.' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Get Guest service
+2. Check if Type of the Technology is  in ['ethernet', 'wifi', 'wimax', 'bluetooth', 'cellular']</step_desc>
+            <expected>:</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PT_Type.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Property' execution_type='auto' id='CM_PT_Powered' priority='P2' purpose='Test if Powered in Technology interface is valid.' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Get Guest service
+2. Check if Powered is in [True, False]</step_desc>
+            <expected>:</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PT_Powered.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Property' execution_type='auto' id='CM_PS_Strength' priority='P2' purpose='Test if Strength in Service interface is valid.' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Get Guest service
+2. Check if Strength is 0-100</step_desc>
+            <expected>:</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PS_Strength.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Property' execution_type='auto' id='CM_PM_SessionMode' priority='P1' purpose='Test if SessionMode property in Manager interface is valid.' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Get Manager interface
+2. Check if SessionMode property is in  [True  False]</step_desc>
+            <expected>:</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PM_SessionMode.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Property' execution_type='auto' id='CM_PS_Security' priority='P2' purpose='Test if Security in Service interface is valid.' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Get Guest service
+2. Check if Security is in ['none'  'wep'  'psk'  'ieee8021x'  'wpa'  'rsn']</step_desc>
+            <expected>:</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PS_Security.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Property' execution_type='auto' id='CM_PM_OfflineMode' priority='P1' purpose='Test if OfflineMode property in Manager interface is valid.' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Get Manager interface
+2. Check if OfflineMode property is in  [True  False]</step_desc>
+            <expected>:</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PM_OfflineMode.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Property' execution_type='auto' id='CM_PM_State' priority='P0' purpose='Test if State property in Manager interface is valid.' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Get Manager interface
+2. Check if State property is in  ['online'  'offline'  'connected']</step_desc>
+            <expected>:</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PM_State.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Property' execution_type='auto' id='CM_PT_Connected' priority='P2' purpose='Test if Connected in Technology interface is valid.' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Get Guest service
+2. Check if Connected is in [True, False]</step_desc>
+            <expected>As expected</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PT_Connected.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Property' execution_type='auto' id='CM_PS_AutoConnect' priority='P2' purpose='Test if AutoConnect in Service interface is valid.' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Get Guest service
+2. Check if AutoConnect is in [True  False]</step_desc>
+            <expected>:</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PS_AutoConnect.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Property' execution_type='auto' id='CM_PT_Name' priority='P2' purpose='Test if Name in Technology interface is valid.' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Get Guest service
+2. Check if Name is in ['Wired', 'WiFi', 'WiMAX', 'Bluetooth', 'Cellular']</step_desc>
+            <expected>:</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PT_Name.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Property' execution_type='auto' id='CM_PS_State' priority='P2' purpose='Test if State in Service interface is valid.' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Get Guest service
+2. Check if State is in ['ready'  'idle'  'failure'  'association'  'configuration'  'login'  'online']</step_desc>
+            <expected>:</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PS_State.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Property' execution_type='auto' id='CM_PT_Tethering' priority='P2' purpose='Test if Tethering in Service interface is valid.' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Get Guest service
+2. Check if Tethering is in [True, False]</step_desc>
+            <expected>:</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PT_Tethering.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Property' execution_type='auto' id='CM_PS_Type' priority='P2' purpose='Test if Type in Service interface is valid.' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Get Guest service
+2. Check if Type of the service is 'WiFi'</step_desc>
+            <expected>:</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PS_Type.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Property' execution_type='auto' id='CM_PS_Domains' priority='P2' purpose='Test if Domains in Service interface is valid.' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Get Guest service
+2. Check if Domains is not empty</step_desc>
+            <expected>:</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PS_Domains.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Property' execution_type='auto' id='CM_PS_Error' priority='P2' purpose='Test if Error in Service interface is valid.' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Get Guest service
+2. Check if Error is not in properties since Guest connect always success</step_desc>
+            <expected>:</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PS_Error.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Property' execution_type='auto' id='CM_PS_Name' priority='P2' purpose='Test if Name in Service interface is valid.' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Get Guest service
+2. Check if Name is  'Guest'</step_desc>
+            <expected>:</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PS_Name.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Property' execution_type='auto' id='CM_PS_Favorite' priority='P2' purpose='Test if Favorite in Service interface is valid.' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Get Guest service
+2. Check if Favorite is in [True  False]</step_desc>
+            <expected>:</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PS_Favorite.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Property' execution_type='auto' id='CM_PS_Immutable' priority='P2' purpose='Test if Immutable in Service interface is valid.' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Get Guest service
+2. Check if Immutable is in [True  False]</step_desc>
+            <expected>:</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PS_Immutable.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+  </set>
+  <set name='Ethernet'>
+    <testcase component='Networking/Connman/Ethernet' execution_type='auto' id='CM_Eth_DeviceIsExist' priority='P0' purpose='Check if ethernet device exists' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Get the technology list from connman
+2. Get the ethernet technology
+3. Get the device from ethernet technology
+4. Check if the device is null</step_desc>
+            <expected>There is ethernet device</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_Eth_DeviceIsExist.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+  </set>
+  <set name='WiFi'>
+    <testcase component='Networking/Connman/WiFi' execution_type='auto' id='CM_WG_Disconnect' priority='P2' purpose='Check if we can disconnet Guest WiFi network' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Make sure there is Guest WiFi network
+2. Powered off the device
+3. Check if we can ping Guest WiFi network</step_desc>
+            <expected>Ping cannot receive any response.</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_WG_Disconnect.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/WiFi' execution_type='auto' id='CM_WG_SmallBroadcastPing' priority='P2' purpose='Check if can broadcast with small packet for WiFi device' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. connect-service Guest
+2. Get Guest WiFi IP address (ifconfig or list-service)
+3. ping -c 5 -s 64 &lt;AP address&gt;</step_desc>
+            <expected>Receives ping response.</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_WG_SmallBroadcastPing.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/WiFi' execution_type='auto' id='CM_WG_PoweredOff' priority='P2' purpose='Check if Powered off works for WiFi device' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>"Run Instructions
+1. test-manager shows the powered state of wifi is 'true'
+2. test-connman disable wifi
+3. test-manager shows the powered state of wifi is 'false'
+Pass/Fail Criteria:   The value is  'false'</step_desc>
+            <expected>The value is  'false'</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_WG_PoweredOff.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/WiFi' execution_type='auto' id='CM_WG_IsReEnableWorks' priority='P2' purpose='Check if WiFi device still works after powered off and powered on' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. test-connman list
+2. Check if there is Guest wifi service
+3. test-connman disable wifi
+4. 'test-connman list' shows there is no wifi service
+5. test-connman enable wifi
+6. 'test-connman list' shows there is the wifi Guest service
+7. connect-service Guest
+8. ping a machine in Guest network</step_desc>
+            <expected>ping response</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_WG_IsReEnableWorks.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/WiFi' execution_type='auto' id='CM_WG_IsPoweredOn' priority='P2' purpose='Check if WiFi device is on by default' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Get the Powered status of WiFi device
+2. Check the Powered status is On</step_desc>
+            <expected>The Powered status is on</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_WG_IsPoweredOn.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/WiFi' execution_type='auto' id='CM_WG_PoweredOn' priority='P2' purpose='Check if Powered on works for WiFi device' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. test-connman disable wifi and check if powered state is 'false' by 'test-manager'
+2. test-connman enable wifi
+3. Check if powerd state is 'true' by 'test-manager'</step_desc>
+            <expected>The value is 'true'</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_WG_PoweredOn.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/WiFi' execution_type='auto' id='CM_WG_BigBroadcastPing' priority='P1' purpose='Check if we can ping Guest WiFi nework through broadcast' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. connect-service Guest
+2. Get Guest WiFi IP address (ifconfig or list-service)
+3. ping -c 5 -s 1400 &lt;AP address&gt;</step_desc>
+            <expected>Ping will receive response.</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_WG_BigBroadcastPing.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/WiFi' execution_type='auto' id='CM_WG_DeviceIsExist' priority='P0' purpose='Check if WiFi device exists' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Get the technology list from connman
+2. Get the WiFi technology
+3. Get the device from WiFi technology
+4. Check if the device is null</step_desc>
+            <expected>There is WiFi device</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_WG_DeviceIsExist.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+  </set>
+  <set name='State'>
+    <testcase component='Networking/Connman/State' execution_type='auto' id='CM_State_WIFI_AvialableAP' priority='P2' purpose='WIFI service should be &apos;online&apos; when connect to an WIFI AP that can surf internet.' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Prepare an wifi AP that can be connected and can surf internet by this AP
+2. Only connect to this WIFI AP and make sure that it can surf internet by this service
+3. Check the connection state for this AP service</step_desc>
+            <expected>The state should be 'online' for this connected WIFI AP.</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_State_WIFI_AvialableAP.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+  </set>
+  <set name='Signal'>
+    <testcase component='Networking/Connman/Signal' execution_type='auto' id='CM_SS_IPv4' priority='P2' purpose='Check if signal is triggered through Service interface when IPv4 property changed' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Set property_changed call back
+2. Using following way to make the property changed
+2.1 Powered off/on WiFi device
+2.2 Connect to Guest WiFi network
+3. Check if the property_changed called.</step_desc>
+            <expected>The callback function is called.</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_SS_IPv4.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Signal' execution_type='auto' id='CM_SS_Favorite' priority='P2' purpose='Check if Service signal is triggered when Favorite property changed' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Set property_changed call back
+2. Using following way to make the property changed
+2.1 Connect to Guest WiFi network service
+2.2 Remove the serivce
+3. Check if the property_changed called.</step_desc>
+            <expected>The callback function is called.</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_SS_Favorite.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Signal' execution_type='auto' id='CM_SC_IPv4' priority='P2' purpose='Check if signal is triggered when IPv4property changed' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Set property_changed call back
+2. Using following way to make the property changed
+2.1 Set connman to offline mode
+2.2 sleep 5 seconds  and set connman to online mode
+3. Check if the property_changed called.</step_desc>
+            <expected>The callback function is called.</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_SC_IPv4.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Signal' execution_type='auto' id='CM_SC_Favorite' priority='P2' purpose='Check if signal is triggered when Favorite property changed' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Set property_changed call back
+2. Using following way to make the property changed
+2.1 Set connman to offline mode
+2.2 sleep 5 seconds  and set connman to online mode
+3. Check if the property_changed called.</step_desc>
+            <expected>The callback function is called.</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_SC_Favorite.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Signal' execution_type='auto' id='CM_SS_AutoConnect' priority='P2' purpose='Check if signal is triggered when AutoConnect property changed' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Set property_changed call back
+2. Using following way to make the property changed
+2.1 Set Service.AutoConnect to off
+2.2 Set Service.AutoConnect to on
+3. Check if the property_changed called.</step_desc>
+            <expected>The callback function is called.</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_SS_AutoConnect.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Signal' execution_type='auto' id='CM_SC_State' priority='P2' purpose='Check if signal is triggered when State property changed' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Set property_changed call back
+2. Using following way to make the property changed
+2.1 Powered off the device
+2.2 sleep 5 seconds  and Powered on the device
+3. Check if the property_changed called.</step_desc>
+            <expected>The callback function is called.</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_SC_State.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+	<testcase component='Networking/Connman/Signal' execution_type='auto' id='CM_SC_Connected' priority='P2' purpose='Check if signal is triggered when ConnectedTechnologies property changed' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Set property_changed call back
+2. Using following way to make the property changed
+2.1 Set connman to offline mode
+2.2 sleep 5 seconds  and set connman to online mode
+3. Check if the property_changed called</step_desc>
+            <expected>The callback function is called.</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_SC_Connected.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Signal' execution_type='auto' id='CM_SC_OfflineMode' priority='P2' purpose='Check if signal is triggered when OfflineMode property changed' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Set property_changed call back
+2. Using following way to make the property changed
+2.1 Set connman to offline mode
+2.2 sleep 5 seconds  and set connman to online mode
+3. Check if the property_changed called.</step_desc>
+            <expected>The callback function is called.</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_SC_OfflineMode.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+    <testcase component='Networking/Connman/Signal' execution_type='auto' id='CM_SM_State' priority='P2' purpose='Check if Manager signal is triggered through Manager interface when State property changed' status='approved' type='functional_positive'>
+      <description>
+        <pre_condition/>
+        <post_condition/>
+        <steps>
+          <step order='1'>
+            <step_desc>1. Set property_changed call back
+2. Using following way to make the property changed
+2.1 Set offline mode
+2.2 sleep 5 seconds  and set to online mode
+3. Check if the property_changed called.</step_desc>
+            <expected>The callback function is called.</expected>
+          </step>
+        </steps>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_SM_State.py</test_script_entry>
+      </description>
+      <categories>
+        <category>Mobile</category>
+        <category>Netbook</category>
+        <category>IVI</category>
+        <category>TV</category>
+      </categories>
+    </testcase>
+  </set>
+</suite>
