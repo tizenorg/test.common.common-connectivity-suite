@@ -13,7 +13,7 @@
             <expected>There should be one thread named connmand in background</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_Launch_Boot.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_Launch_Boot.py</test_script_entry>
       </description>
       <categories>
         <category>Netbook</category>
@@ -40,7 +40,7 @@ TV             enabled
 handset      offline</expected>
           </step>
         </steps>
-      <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_Launch_State_Ethernet.py</test_script_entry></description>
+      <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_Launch_State_Ethernet.py</test_script_entry></description>
       <categories>
         <category>Netbook</category>
         <category>IVI</category>
@@ -60,7 +60,7 @@ reboot</pre_condition>
             <expected>OfflineMode is 'false'</expected>
           </step>
         </steps>
-      <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_Launch_State_Offlinemode.py</test_script_entry></description>
+      <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_Launch_State_Offlinemode.py</test_script_entry></description>
       <categories>
         <category>Netbook</category>
         <category>IVI</category>
@@ -83,7 +83,7 @@ reboot</pre_condition>
             <expected>Step 7 shows there is only one connmand running.</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_Launch_OneConnmand.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_Launch_OneConnmand.py</test_script_entry>
       </description>
       <categories>
         <category>Netbook</category>
@@ -103,7 +103,7 @@ reboot</pre_condition>
             <expected>There should be one thread named bluetoothd in background</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_Launch_BT.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_Launch_BT.py</test_script_entry>
       </description>
       <categories>
         <category>Netbook</category>
@@ -129,7 +129,7 @@ TV             offline
 handset      offline</expected>
           </step>
         </steps>
-      <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_Launch_State_Bluetooth.py</test_script_entry></description>
+      <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_Launch_State_Bluetooth.py</test_script_entry></description>
       <categories>
         <category>Netbook</category>
         <category>IVI</category>
@@ -155,7 +155,7 @@ TV             enabled
 handset      offline</expected>
           </step>
         </steps>
-      <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_Launch_State_WiFi.py</test_script_entry></description>
+      <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_Launch_State_WiFi.py</test_script_entry></description>
       <categories>
         <category>Netbook</category>
         <category>IVI</category>
@@ -174,7 +174,7 @@ handset      offline</expected>
             <expected>There should be one thread named wpa_supplicant in background</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_Launch_WpaSupplicant.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_Launch_WpaSupplicant.py</test_script_entry>
       </description>
       <categories>
         <category>Netbook</category>
@@ -201,7 +201,7 @@ handset      offline</expected>
             <expected>Can ping PANU server</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_BT_IsReEnableWorks.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_BT_IsReEnableWorks.py</test_script_entry>
       </description>
       <categories>
         <category>Netbook</category>
@@ -219,7 +219,7 @@ handset      offline</expected>
             <expected>The powered 'State' of bluetooth is 'true'</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_BT_IsPoweredOn.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_BT_IsPoweredOn.py</test_script_entry>
       </description>
       <categories>
         <category>Netbook</category>
@@ -238,7 +238,7 @@ handset      offline</expected>
             <expected>The value is 'true'</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_BT_PoweredOn.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_BT_PoweredOn.py</test_script_entry>
       </description>
       <categories>
         <category>Netbook</category>
@@ -257,7 +257,7 @@ handset      offline</expected>
             <expected>The value is  'false'</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_BT_PoweredOff.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_BT_PoweredOff.py</test_script_entry>
       </description>
       <categories>
         <category>Netbook</category>
@@ -275,7 +275,7 @@ handset      offline</expected>
             <expected>There is bluetooth technology</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_BT_DeviceIsExist.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_BT_DeviceIsExist.py</test_script_entry>
       </description>
       <categories>
         <category>Netbook</category>
@@ -295,7 +295,7 @@ handset      offline</expected>
             <expected>Can get IP and ping the AP</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_WS_Open.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_WS_Open.py</test_script_entry>
       </description>
       <categories>
         <category>Netbook</category>
@@ -314,7 +314,7 @@ handset      offline</expected>
             <expected>Can get IP and ping the AP</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_WS_WPA.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_WS_WPA.py</test_script_entry>
       </description>
       <categories>
         <category>Netbook</category>
@@ -335,7 +335,7 @@ handset      offline</expected>
             <expected>ConnMan should remember the password and can connect to the AP</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_WA_RememberPasswd.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_WA_RememberPasswd.py</test_script_entry>
       </description>
       <categories>
         <category>Netbook</category>
@@ -355,7 +355,7 @@ handset      offline</expected>
             <expected>Error property is set.</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_WA_ForgotPassword.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_WA_ForgotPassword.py</test_script_entry>
       </description>
       <categories>
         <category>Netbook</category>
@@ -376,7 +376,7 @@ handset      offline</expected>
             <expected>:</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PS_Nameservers.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_PS_Nameservers.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -396,7 +396,7 @@ handset      offline</expected>
             <expected>:</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PT_Type.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_PT_Type.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -416,7 +416,7 @@ handset      offline</expected>
             <expected>:</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PT_Powered.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_PT_Powered.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -436,7 +436,7 @@ handset      offline</expected>
             <expected>:</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PS_Strength.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_PS_Strength.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -456,7 +456,7 @@ handset      offline</expected>
             <expected>:</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PM_SessionMode.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_PM_SessionMode.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -476,7 +476,7 @@ handset      offline</expected>
             <expected>:</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PS_Security.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_PS_Security.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -496,7 +496,7 @@ handset      offline</expected>
             <expected>:</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PM_OfflineMode.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_PM_OfflineMode.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -516,7 +516,7 @@ handset      offline</expected>
             <expected>:</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PM_State.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_PM_State.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -536,7 +536,7 @@ handset      offline</expected>
             <expected>As expected</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PT_Connected.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_PT_Connected.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -556,7 +556,7 @@ handset      offline</expected>
             <expected>:</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PS_AutoConnect.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_PS_AutoConnect.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -575,7 +575,7 @@ handset      offline</expected>
             <expected>:</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PT_Name.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_PT_Name.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -594,7 +594,7 @@ handset      offline</expected>
             <expected>:</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PS_State.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_PS_State.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -614,7 +614,7 @@ handset      offline</expected>
             <expected>:</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PT_Tethering.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_PT_Tethering.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -634,7 +634,7 @@ handset      offline</expected>
             <expected>:</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PS_Type.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_PS_Type.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -654,7 +654,7 @@ handset      offline</expected>
             <expected>:</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PS_Domains.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_PS_Domains.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -674,7 +674,7 @@ handset      offline</expected>
             <expected>:</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PS_Error.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_PS_Error.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -694,7 +694,7 @@ handset      offline</expected>
             <expected>:</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PS_Name.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_PS_Name.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -714,7 +714,7 @@ handset      offline</expected>
             <expected>:</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PS_Favorite.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_PS_Favorite.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -734,7 +734,7 @@ handset      offline</expected>
             <expected>:</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_PS_Immutable.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_PS_Immutable.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -758,7 +758,7 @@ handset      offline</expected>
             <expected>There is ethernet device</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_Eth_DeviceIsExist.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_Eth_DeviceIsExist.py</test_script_entry>
       </description>
       <categories>
         <category>Netbook</category>
@@ -780,7 +780,7 @@ handset      offline</expected>
             <expected>Ping cannot receive any response.</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_WG_Disconnect.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_WG_Disconnect.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -801,7 +801,7 @@ handset      offline</expected>
             <expected>Receives ping response.</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_WG_SmallBroadcastPing.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_WG_SmallBroadcastPing.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -824,7 +824,7 @@ Pass/Fail Criteria:   The value is  'false'</step_desc>
             <expected>The value is  'false'</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_WG_PoweredOff.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_WG_PoweredOff.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -850,7 +850,7 @@ Pass/Fail Criteria:   The value is  'false'</step_desc>
             <expected>ping response</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_WG_IsReEnableWorks.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_WG_IsReEnableWorks.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -870,7 +870,7 @@ Pass/Fail Criteria:   The value is  'false'</step_desc>
             <expected>The Powered status is on</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_WG_IsPoweredOn.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_WG_IsPoweredOn.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -891,7 +891,7 @@ Pass/Fail Criteria:   The value is  'false'</step_desc>
             <expected>The value is 'true'</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_WG_PoweredOn.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_WG_PoweredOn.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -912,7 +912,7 @@ Pass/Fail Criteria:   The value is  'false'</step_desc>
             <expected>Ping will receive response.</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_WG_BigBroadcastPing.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_WG_BigBroadcastPing.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -934,7 +934,7 @@ Pass/Fail Criteria:   The value is  'false'</step_desc>
             <expected>There is WiFi device</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_WG_DeviceIsExist.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_WG_DeviceIsExist.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -957,7 +957,7 @@ Pass/Fail Criteria:   The value is  'false'</step_desc>
             <expected>The state should be 'online' for this connected WIFI AP.</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_State_WIFI_AvialableAP.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_State_WIFI_AvialableAP.py</test_script_entry>
       </description>
       <categories>
         <category>Netbook</category>
@@ -981,7 +981,7 @@ Pass/Fail Criteria:   The value is  'false'</step_desc>
             <expected>The callback function is called.</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_SS_IPv4.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_SS_IPv4.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -1004,7 +1004,7 @@ Pass/Fail Criteria:   The value is  'false'</step_desc>
             <expected>The callback function is called.</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_SS_Favorite.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_SS_Favorite.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -1027,7 +1027,7 @@ Pass/Fail Criteria:   The value is  'false'</step_desc>
             <expected>The callback function is called.</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_SC_IPv4.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_SC_IPv4.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -1050,7 +1050,7 @@ Pass/Fail Criteria:   The value is  'false'</step_desc>
             <expected>The callback function is called.</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_SC_Favorite.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_SC_Favorite.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -1073,7 +1073,7 @@ Pass/Fail Criteria:   The value is  'false'</step_desc>
             <expected>The callback function is called.</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_SS_AutoConnect.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_SS_AutoConnect.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -1096,7 +1096,7 @@ Pass/Fail Criteria:   The value is  'false'</step_desc>
             <expected>The callback function is called.</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_SC_State.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_SC_State.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -1119,7 +1119,7 @@ Pass/Fail Criteria:   The value is  'false'</step_desc>
             <expected>The callback function is called.</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_SC_Connected.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_SC_Connected.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -1142,7 +1142,7 @@ Pass/Fail Criteria:   The value is  'false'</step_desc>
             <expected>The callback function is called.</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_SC_OfflineMode.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_SC_OfflineMode.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>
@@ -1165,7 +1165,7 @@ Pass/Fail Criteria:   The value is  'false'</step_desc>
             <expected>The callback function is called.</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/common-connectivity-suite/tts-connman-tests/CM_SM_State.py</test_script_entry>
+        <test_script_entry test_script_expected_result='0' timeout='360'>/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/CM_SM_State.py</test_script_entry>
       </description>
       <categories>
         <category>Mobile</category>

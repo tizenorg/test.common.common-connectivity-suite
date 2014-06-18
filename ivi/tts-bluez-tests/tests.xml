@@ -12,7 +12,7 @@ check if system runs bluetoothd daemon in beginning of booting up.</step_desc>
             <expected>when system boots up, it should run bluetoothd daemon.</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result="0">/usr/share/tests/common-connectivity-suite/tts-bluez-tests/bt_system_daemon_bluetoothd.sh</test_script_entry>
+        <test_script_entry test_script_expected_result="0">/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/bt_system_daemon_bluetoothd.sh</test_script_entry>
       </description>
       <categories>
         <category>IVI</category>
@@ -28,7 +28,7 @@ check if system runs bluetoothd daemon in beginning of booting up.</step_desc>
             <expected>it should get BT device name</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result="0">/usr/share/tests/common-connectivity-suite/tts-bluez-tests/bt_adapter_get_name.sh</test_script_entry>
+        <test_script_entry test_script_expected_result="0">/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/bt_adapter_get_name.sh</test_script_entry>
       </description>
       <categories>
         <category>IVI</category>
@@ -45,7 +45,7 @@ Check if obexd rpm package is installed</step_desc>
             <expected>system should install obexd package</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result="0">/usr/share/tests/common-connectivity-suite/tts-bluez-tests/bt_system_package_obexd.sh</test_script_entry>
+        <test_script_entry test_script_expected_result="0">/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/bt_system_package_obexd.sh</test_script_entry>
       </description>
       <categories>
         <category>IVI</category>
@@ -62,7 +62,7 @@ Check if obexd rpm package is installed</step_desc>
             <expected>1. Bluetooth MAC address should be output in pattern, for example, 00:22:69:FB:AA:8A</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result="0">/usr/share/tests/common-connectivity-suite/tts-bluez-tests/bt_adapter_get_address.sh</test_script_entry>
+        <test_script_entry test_script_expected_result="0">/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/bt_adapter_get_address.sh</test_script_entry>
       </description>
       <categories>
         <category>IVI</category>
@@ -79,7 +79,7 @@ Check if obexd rpm package is installed</step_desc>
             <expected>1. The property value got from DBus call should be same with the value we set.</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result="0">/usr/share/tests/common-connectivity-suite/tts-bluez-tests/bt_adapter_set_power.sh</test_script_entry>
+        <test_script_entry test_script_expected_result="0">/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/bt_adapter_set_power.sh</test_script_entry>
       </description>
       <categories>
         <category>IVI</category>
@@ -96,7 +96,7 @@ Check if the bluez rpm package is installed</step_desc>
             <expected>System should install bluez package.</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result="0">/usr/share/tests/common-connectivity-suite/tts-bluez-tests/bt_system_package_bluez.sh</test_script_entry>
+        <test_script_entry test_script_expected_result="0">/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/bt_system_package_bluez.sh</test_script_entry>
       </description>
       <categories>
         <category>IVI</category>
@@ -114,7 +114,7 @@ Check if the bluez rpm package is installed</step_desc>
             <expected>1. For each execution during the 50 times, adapter power should be correctly On and Off.</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result="0">/usr/share/tests/common-connectivity-suite/tts-bluez-tests/bt_adapter_set_stress_power_50times.sh</test_script_entry>
+        <test_script_entry test_script_expected_result="0">/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/bt_adapter_set_stress_power_50times.sh</test_script_entry>
       </description>
       <categories>
         <category>IVI</category>
@@ -130,7 +130,7 @@ Check if the bluez rpm package is installed</step_desc>
             <expected>the hci0 discoverabletimeout could be set to 1</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result="0">/usr/share/tests/common-connectivity-suite/tts-bluez-tests/bt_adapter_set_discoverabletimeout.sh</test_script_entry>
+        <test_script_entry test_script_expected_result="0">/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/bt_adapter_set_discoverabletimeout.sh</test_script_entry>
       </description>
       <categories>
         <category>IVI</category>
@@ -146,7 +146,7 @@ Check if the bluez rpm package is installed</step_desc>
             <expected>hci0 pairable could be set to 0</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result="0">/usr/share/tests/common-connectivity-suite/tts-bluez-tests/bt_adapter_set_pairable_off.sh</test_script_entry>
+        <test_script_entry test_script_expected_result="0">/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/bt_adapter_set_pairable_off.sh</test_script_entry>
       </description>
       <categories>
         <category>IVI</category>
@@ -162,7 +162,7 @@ Check if the bluez rpm package is installed</step_desc>
             <expected>hci0 pairable should be set to 0</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result="0">/usr/share/tests/common-connectivity-suite/tts-bluez-tests/bt_adapter_set_pairable_on.sh</test_script_entry>
+        <test_script_entry test_script_expected_result="0">/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/bt_adapter_set_pairable_on.sh</test_script_entry>
       </description>
       <categories>
         <category>IVI</category>
@@ -178,7 +178,7 @@ Check if the bluez rpm package is installed</step_desc>
             <expected>it should present discoverabletimeout info.</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result="0">/usr/share/tests/common-connectivity-suite/tts-bluez-tests/bt_adapter_get_discoverabletimeout.sh</test_script_entry>
+        <test_script_entry test_script_expected_result="0">/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/bt_adapter_get_discoverabletimeout.sh</test_script_entry>
       </description>
       <categories>
         <category>IVI</category>
@@ -194,7 +194,7 @@ Check if the bluez rpm package is installed</step_desc>
             <expected>it should get hci0 power status</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result="0">/usr/share/tests/common-connectivity-suite/tts-bluez-tests/bt_adapter_get_power.sh</test_script_entry>
+        <test_script_entry test_script_expected_result="0">/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/bt_adapter_get_power.sh</test_script_entry>
       </description>
       <categories>
         <category>IVI</category>
@@ -209,11 +209,11 @@ Check if the bluez rpm package is installed</step_desc>
         <post_condition />
         <steps>
           <step order="1">
-            <step_desc>/usr/share/tests/common-connectivity-suite/tts-bluez-tests/hci_set_iscan.sh</step_desc>
+            <step_desc>/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/hci_set_iscan.sh</step_desc>
             <expected>0</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result="0">/usr/share/tests/common-connectivity-suite/tts-bluez-tests/hci_set_iscan.sh</test_script_entry>
+        <test_script_entry test_script_expected_result="0">/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/hci_set_iscan.sh</test_script_entry>
       </description>
       <categories>
         <category>IVI</category>
@@ -226,11 +226,11 @@ Check if the bluez rpm package is installed</step_desc>
         <post_condition />
         <steps>
           <step order="1">
-            <step_desc>/usr/share/tests/common-connectivity-suite/tts-bluez-tests/hci_set_name.sh</step_desc>
+            <step_desc>/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/hci_set_name.sh</step_desc>
             <expected>0</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result="0">/usr/share/tests/common-connectivity-suite/tts-bluez-tests/hci_set_name.sh</test_script_entry>
+        <test_script_entry test_script_expected_result="0">/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/hci_set_name.sh</test_script_entry>
       </description>
       <categories>
         <category>IVI</category>
@@ -243,11 +243,11 @@ Check if the bluez rpm package is installed</step_desc>
         <post_condition />
         <steps>
           <step order="1">
-            <step_desc>/usr/share/tests/common-connectivity-suite/tts-bluez-tests/bt_hci_name.sh</step_desc>
+            <step_desc>/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/bt_hci_name.sh</step_desc>
             <expected>0</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result="0">/usr/share/tests/common-connectivity-suite/tts-bluez-tests/bt_hci_name.sh</test_script_entry>
+        <test_script_entry test_script_expected_result="0">/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/bt_hci_name.sh</test_script_entry>
       </description>
       <categories>
         <category>IVI</category>
@@ -260,11 +260,11 @@ Check if the bluez rpm package is installed</step_desc>
         <post_condition />
         <steps>
           <step order="1">
-            <step_desc>/usr/share/tests/common-connectivity-suite/tts-bluez-tests/hci_set_piscan.sh</step_desc>
+            <step_desc>/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/hci_set_piscan.sh</step_desc>
             <expected>0</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result="0">/usr/share/tests/common-connectivity-suite/tts-bluez-tests/hci_set_piscan.sh</test_script_entry>
+        <test_script_entry test_script_expected_result="0">/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/hci_set_piscan.sh</test_script_entry>
       </description>
       <categories>
         <category>IVI</category>
@@ -277,11 +277,11 @@ Check if the bluez rpm package is installed</step_desc>
         <post_condition />
         <steps>
           <step order="1">
-            <step_desc>/usr/share/tests/common-connectivity-suite/tts-bluez-tests/bt_hci_dev.sh</step_desc>
+            <step_desc>/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/bt_hci_dev.sh</step_desc>
             <expected>0</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result="0">/usr/share/tests/common-connectivity-suite/tts-bluez-tests/bt_hci_dev.sh</test_script_entry>
+        <test_script_entry test_script_expected_result="0">/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/bt_hci_dev.sh</test_script_entry>
       </description>
       <categories>
         <category>IVI</category>
@@ -294,11 +294,11 @@ Check if the bluez rpm package is installed</step_desc>
         <post_condition />
         <steps>
           <step order="1">
-            <step_desc>/usr/share/tests/common-connectivity-suite/tts-bluez-tests/hci_get_name.sh</step_desc>
+            <step_desc>/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/hci_get_name.sh</step_desc>
             <expected>0</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result="0">/usr/share/tests/common-connectivity-suite/tts-bluez-tests/hci_get_name.sh</test_script_entry>
+        <test_script_entry test_script_expected_result="0">/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/hci_get_name.sh</test_script_entry>
       </description>
       <categories>
         <category>IVI</category>
@@ -311,11 +311,11 @@ Check if the bluez rpm package is installed</step_desc>
         <post_condition />
         <steps>
           <step order="1">
-            <step_desc>/usr/share/tests/common-connectivity-suite/tts-bluez-tests/hci_tool_scan.sh</step_desc>
+            <step_desc>/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/hci_tool_scan.sh</step_desc>
             <expected>0</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result="0">/usr/share/tests/common-connectivity-suite/tts-bluez-tests/hci_tool_scan.sh</test_script_entry>
+        <test_script_entry test_script_expected_result="0">/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/hci_tool_scan.sh</test_script_entry>
       </description>
       <categories>
         <category>IVI</category>
@@ -328,11 +328,11 @@ Check if the bluez rpm package is installed</step_desc>
         <post_condition />
         <steps>
           <step order="1">
-            <step_desc>/usr/share/tests/common-connectivity-suite/tts-bluez-tests/bt_gap_pairing_computer.sh</step_desc>
+            <step_desc>/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/bt_gap_pairing_computer.sh</step_desc>
             <expected>0</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result="0">/usr/share/tests/common-connectivity-suite/tts-bluez-tests/bt_gap_pairing_computer.sh</test_script_entry>
+        <test_script_entry test_script_expected_result="0">/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/bt_gap_pairing_computer.sh</test_script_entry>
       </description>
       <categories>
         <category>IVI</category>
@@ -345,11 +345,11 @@ Check if the bluez rpm package is installed</step_desc>
         <post_condition />
         <steps>
           <step order="1">
-            <step_desc>/usr/share/tests/common-connectivity-suite/tts-bluez-tests/bt_l2cap_ping_check.sh</step_desc>
+            <step_desc>/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/bt_l2cap_ping_check.sh</step_desc>
             <expected>0</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result="0">/usr/share/tests/common-connectivity-suite/tts-bluez-tests/bt_l2cap_ping_check.sh</test_script_entry>
+        <test_script_entry test_script_expected_result="0">/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/bt_l2cap_ping_check.sh</test_script_entry>
       </description>
       <categories>
         <category>IVI</category>
@@ -362,11 +362,11 @@ Check if the bluez rpm package is installed</step_desc>
         <post_condition />
         <steps>
           <step order="1">
-            <step_desc>/usr/share/tests/common-connectivity-suite/tts-bluez-tests/bt_gap_remove_pairing_computer.sh</step_desc>
+            <step_desc>/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/bt_gap_remove_pairing_computer.sh</step_desc>
             <expected>0</expected>
           </step>
         </steps>
-        <test_script_entry test_script_expected_result="0">/usr/share/tests/common-connectivity-suite/tts-bluez-tests/bt_gap_remove_pairing_computer.sh</test_script_entry>
+        <test_script_entry test_script_expected_result="0">/usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/bt_gap_remove_pairing_computer.sh</test_script_entry>
       </description>
       <categories>
         <category>IVI</category>

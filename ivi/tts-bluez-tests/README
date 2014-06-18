@@ -30,8 +30,8 @@ Build case:
 1. rpm -ivh tts-bluez-tests-0.1.0-1.i386.rpm    --- install RPM to your testing machine 
 
 To run cases, you can either do step.2 or step.3
-2. cd /usr/share/tests/common-connectivity-suite/tts-bluez-tests and run any sh file by root account.
-3. testkit-lite -f /usr/share/tests/common-connectivity-suite/tts-bluez-tests/tests.xml --comm localhost -o ./results.xml
+2. cd /usr/share/tests/ivi-connectivity-tests/tts-bluez-tests and run any sh file by root account.
+3. testkit-lite -f /usr/share/tests/ivi-connectivity-tests/tts-bluez-tests/tests.xml --comm localhost -o ./results.xml
 
 
 

@@ -1,3 +1,4 @@
+#!/bin/sh
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
@@ -10,7 +11,6 @@
 #       Wang, Jing J  <jing.j.wang@intel.com>
 # Changlog:
 #
-#!/bin/sh
 
 if [ -z "$1" ]; then
         echo "Warning: Please specify execution command"

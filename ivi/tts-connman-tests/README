@@ -28,7 +28,7 @@ tts-connman-tests
     Flight: Test ConnMan in flight on/off mode.
     Property: Test property value in API
 Following are structure after installation:
-/usr/share/tests/common-connectivity-suite/tts-connman-tests/
+/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/
   CM_*.py: All automatic test cases
   common: Common functions that used in test cases
   README: This file 
@@ -64,10 +64,10 @@ Refer the section Test environment setup
 + Run
 Setup a open hidden WiFi AP with essid that you
 Connect to a ethernet network so that "ping -b" local network has response
-cd /usr/share/tests/common-connectivity-suite/tts-connman-tests/
+cd /usr/share/tests/ivi-connectivity-tests/tts-connman-tests/
 su - 
-export PYTHONPATH=$PYTHONPATH:/usr/share/tests/common-connectivity-suite/tts-connman-tests/common
-testkit-lite -f /usr/share/tests/common-connectivity-suite/tts-connman-tests/tests.xml --comm localhost -o ./results.xml
+export PYTHONPATH=$PYTHONPATH:/usr/share/tests/ivi-connectivity-tests/tts-connman-tests/common
+testkit-lite -f /usr/share/tests/ivi-connectivity-tests/tts-connman-tests/tests.xml --comm localhost -o ./results.xml
 Please refer to the section Test Envrionment setup for what to test
 
 ---------------------
